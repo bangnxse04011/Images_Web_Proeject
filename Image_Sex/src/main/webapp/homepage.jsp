@@ -5,9 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Anh R18</title>
+<title>Fluid Gallery HTML5 CSS3 Template</title>
 <!--
-
+Fluid Gallery Template
+http://www.templatemo.com/tm-500-fluid-gallery
 -->
 <!-- load stylesheets -->
 <link rel="stylesheet"
@@ -22,7 +23,7 @@
 <link rel="stylesheet" href="css/magnific-popup.css">
 <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
 <link rel="stylesheet" href="css/templatemo-style.css">
-
+<link rel="stylesheet" type="text/css" href="css/templatebonus.css">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -42,6 +43,17 @@
 		$('html').addClass('gray');
 	} else {
 		$('html').removeClass('gray');
+	}
+</script>
+<script>
+	// Get the modal
+	var modal = document.getElementById('id01');
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
 	}
 </script>
 </head>
@@ -77,17 +89,19 @@
 									data-no="3">3rd fluid</a></li>
 								<li class="nav-item"><a class="nav-link" href="#0"
 									data-no="4">Columns</a></li>
-								<li class="nav-item"><a onclick="document.getElementById('id01').style.display='block'" class="nav-link" href="#0"
-									data-no="5">Login</a>
+								<li class="nav-item"><a
+									onclick="document.getElementById('id01').style.display='block'"
+									class="nav-link" href="#" data-no="5">Login</a>
 									<div id="id01" class="modal">
 										<span
 											onclick="document.getElementById('id01').style.display='none'"
 											class="close" title="Close Modal">&times;</span>
 
 										<!-- Modal Content -->
-										<form class="modal-content animate" action="/action_page.php">
+
+										<form action="">
 											<div class="imgcontainer">
-												<img src="img_avatar2.png" alt="Avatar" class="avatar">
+												<img src="img/img_avatar2.png" alt="Avatar" class="avatar">
 											</div>
 
 											<div class="container">
@@ -1136,15 +1150,4 @@
 
 	</div>
 </body>
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
 </html>

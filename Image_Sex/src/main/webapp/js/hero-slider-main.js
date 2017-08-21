@@ -1,53 +1,6 @@
 jQuery(document).ready(function($){
 	var slidesWrapper = $('.cd-hero-slider');
 
-	//check if a .cd-hero-slider exists in the DOM 
-	if ( slidesWrapper.length > 0 ) {
-		var primaryNav = $('.cd-primary-nav'),
-			sliderNav = $('.cd-slider-nav'),
-			navigationMarker = $('.cd-marker'),
-			slidesNumber = slidesWrapper.children('li').length,
-			visibleSlidePosition = 0,
-			autoPlayId,
-			autoPlayDelay = 5000;
-
-		//upload videos (if not on mobile devices)
-		uploadVideo(slidesWrapper);
-
-		//autoplay slider
-		setAutoplay(slidesWrapper, slidesNumber, autoPlayDelay);
-
-		//on mobile - open/close primary navigation clicking/tapping the menu icon
-		primaryNav.on('click', function(event){
-			if($(event.target).is('.cd-primary-nav')) $(this).children('ul').toggleClass('is-visible');
-		});
-		
-		//change visible slide
-		sliderNav.on('click', 'li', function(event){
-			event.preventDefault();
-			var selectedItem = $(this);
-			if(!selectedItem.hasClass('selected')) {
-				// if it's not already selected
-				var selectedPosition = selectedItem.index(),
-					activePosition = slidesWrapper.find('li.selected').index();
-				
-				if( activePosition < selectedPosition) {
-					nextSlide(slidesWrapper.find('.selected'), slidesWrapper, sliderNav, selectedPosition);
-				} else {
-					prevSlide(slidesWrapper.find('.selected'), slidesWrapper, sliderNav, selectedPosition);
-				}
-
-				//this is used for the autoplay
-				visibleSlidePosition = selectedPosition;
-
-				updateSliderNavigation(sliderNav, selectedPosition);
-				updateNavigationMarker(navigationMarker, selectedPosition+1);
-				//reset autoplay
-				setAutoplay(slidesWrapper, slidesNumber, autoPlayDelay);
-			}
-		});
-	}
-
 	function nextSlide(visibleSlide, container, pagination, n){
 		visibleSlide.removeClass('selected').addClass('is-moving').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
 			visibleSlide.removeClass('is-moving');
