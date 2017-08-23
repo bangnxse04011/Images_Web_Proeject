@@ -36,15 +36,7 @@ http://www.templatemo.com/tm-500-fluid-gallery
 <script src="js/jquery-1.11.3.min.js"></script>
 <!-- jQuery (https://jquery.com/download/) -->
 
-<script>
-	var tm_gray_site = false;
 
-	if (tm_gray_site) {
-		$('html').addClass('gray');
-	} else {
-		$('html').removeClass('gray');
-	}
-</script>
 <script>
 	// Get the modal
 	var modal = document.getElementById('id01');
@@ -70,8 +62,7 @@ http://www.templatemo.com/tm-500-fluid-gallery
 					<div class="tm-navbar-bg">
 
 						<a class="navbar-brand text-uppercase" href="#"> <img
-							src="img/logo-Huy-2.png" alt="Image" class="logoTu">
-							AnhR18
+							src="img/logo-Huy-2.png" alt="Image" class="logoTu"> AnhR18
 						</a>
 
 						<button class="navbar-toggler hidden-lg-up" type="button"
@@ -83,47 +74,51 @@ http://www.templatemo.com/tm-500-fluid-gallery
 								<li class="nav-item active selected"><a class="nav-link"
 									href="#0" data-no="1">1st fluid <span class="sr-only">(current)</span></a>
 								</li>
-								<li class="nav-item"><a class="nav-link" href="#0"
-									data-no="2">2nd fluid</a></li>
-								
-									<li class="nav-item"><a class="nav-link" href ="#" onclick="document.getElementById('id01').style.display='block'"> Login</a>
-									<div id="id01" class="modal loginModal"  >
-										<span
-											onclick="document.getElementById('id01').style.display='none'"
-											class="close" title="Close Modal">&times;</span>
+								<li class="nav-item"><a class="nav-link" href="#">2nd
+										fluid</a></li>
 
-										<!-- Modal Content -->
+								<li class="nav-item"><a class="nav-link" href="#"
+									onclick="document.getElementById('id01').style.display='block'">
+										Login</a></li>
 
-										<form action="">
-											<div class="imgcontainer" style="background-color: #f1f1f1">
-												<img src="img/img_avatar2.png" alt="Avatar" class="avatar">
-										
-
-											
-												<label><b>Username</b></label> <input type="text"
-													placeholder="Enter Username" name="uname" required>
-
-												<label><b>Password</b></label> <input type="password"
-													placeholder="Enter Password" name="psw" required>
-
-												<button type="submit">Login</button>
-												<input type="checkbox" checked="checked"> Remember
-												me
-											
-												<button type="button"
-													onclick="document.getElementById('id01').style.display='none'"
-													class="cancelbtn">Cancel</button>
-												<span class="psw">Forgot <a href="#">password?</a></span>
-											</div>
-										</form>
-									</div></li>
 							</ul>
 						</div>
 					</div>
 
 				</nav>
 			</div>
+			<div id="id01" class="modal loginModal" style="margin: 0 auto;">
+				<span onclick="document.getElementById('id01').style.display='none'"
+					class="close" title="Close Modal">&times;</span>
+				<form action="">
+					<div class="imgcontainer" style="background-color: #f1f1f1">
+						<img src="img/img_avatar2.png" alt="Avatar" class="avatar">
+					</div>
+					<div class="imgcontainer" style="background-color: #f1f1f1">
+					<center>
+						<table>
+							<tr>
+								<td><label><b>Username</b></label></td>
+								<td ><input style="width: 100%;" type="text" placeholder="Enter Username"
+									name="uname" required></td>
+							</tr>
+							<tr>
+								<td><label><b>Password</b></label></td>
+								<td ><input type="password" style="width: 100%;"placeholder="Enter Password"
+									name="psw" required></td>
+							</tr>
+						</table>
+						</center>
+						<button type="submit">Login</button>
+						<input type="checkbox" checked="checked"> Remember me
 
+						<button type="button"
+							onclick="document.getElementById('id01').style.display='none'"
+							class="cancelbtn">Cancel</button>
+
+					</div>
+				</form>
+			</div>
 			<ul class="cd-hero-slider">
 
 				<!-- Page 1 Gallery One -->
@@ -365,107 +360,10 @@ http://www.templatemo.com/tm-500-fluid-gallery
 						</div>
 					</div>
 				</li>
-
-				<!-- Page 4 About -->
-				<li>
-					<div class="cd-full-width">
-						<div
-							class="container-fluid js-tm-page-content tm-page-width tm-pad-b"
-							data-page-no="4">
-
-							<div class="tm-about-page">
-
-								<div class="row tm-white-box-margin-b">
-									<div class="col-xs-12">
-										<div class="tm-flex">
-											<div
-												class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
-												<h2 class="tm-text-title">Multiple Columns</h2>
-												<p class="tm-text">Set true or false in HTML page line
-													number 40 to turn on off page color. Mauris elit elit,
-													imperdiet nec lorem sed, finibus maximus mauris. Nam
-													laoreet eros nec convallis placerat.</p>
-											</div>
-											<div
-												class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
-												<h2 class="tm-text-title">Class aptent taciti</h2>
-												<p class="tm-text">Aenean congue nulla et ligula
-													consectetur consequat. Nullam fringilla blandit risus vitae
-													auctor. Donec sed sapien varius, tincidunt nulla ut,
-													ultrices nisl.</p>
-											</div>
-											<div
-												class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
-												<h2 class="tm-text-title">Aenean auctor</h2>
-												<p class="tm-text">Integer enim tortor, tempor quis
-													augue luctus, condimentum porttitor urna. Maecenas
-													condimentum suscipit tortor vitae convallis.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div class="row tm-white-box-margin-b">
-									<div class="col-xs-12">
-										<div class="tm-flex">
-											<div
-												class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
-												<h2 class="tm-text-title">Nulla vitae magna</h2>
-												<p class="tm-text">Donec at felis at risus mattis
-													efficitur. Pellentesque dui urna, blandit a congue ut,
-													blandit sed eros. Sed sagittis consequat pellentesque.
-													Vivamus eros turpis, lobortis sed fermentum euismod,
-													vehicula id eros.</p>
-											</div>
-											<div
-												class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
-												<h2 class="tm-text-title">Pellentesque dui urna</h2>
-												<p class="tm-text">Maecenas porta placerat lacus a
-													lacinia. In imperdiet cursus erat, luctus molestie lorem
-													congue at. Donec fringilla tortor non ipsum semper, sit
-													amet aliquet magna rutrum.</p>
-											</div>
-										</div>
-									</div>
-								</div>
+			</ul>
 
 
 
-								<div class="row tm-white-box-margin-b">
-									<div class="col-xs-12">
-										<div class="tm-flex">
-											<div
-												class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-padding">
-												<h2 class="tm-text-title">One Single Column</h2>
-												<p class="tm-text">
-													You can simply set <strong>var tm_gray_site =
-														true;</strong> or <strong>var tm_gray_site = false;</strong> in the
-													HTML top script tag to enable / disable gray scale or color
-													of the page. Vivamus sit amet scelerisque diam. Donec
-													congue feugiat consectetur. Donec facilisis, elit non
-													suscipit pretium, lacus quam feugiat nulla, id tempus
-													libero tellus ut nisi. Mauris non mi molestie, tristique
-													nibh eu, auctor nibh. Fusce accumsan pretium ex in
-													ullamcorper.
-												</p>
-												<p class="tm-text">Ut blandit nisi purus, eget imperdiet
-													sapien sodales et. Duis euismod, elit in laoreet cursus,
-													ante diam facilisis lacus, sit amet aliquam odio quam ut
-													libero. Proin bibendum ex nec lorem semper euismod. Nulla
-													sed urna at ligula maximus blandit.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-
-						</div>
-					</div> <!-- .cd-full-width -->
-
-				</li>
-
-				
 			<!-- .cd-hero-slider -->
 
 			<footer class="tm-footer">
@@ -560,7 +458,6 @@ http://www.templatemo.com/tm-500-fluid-gallery
 									}
 								});
 
-							
 								/* Collapse menu after click 
 								-----------------------------------------*/
 								$('#tmNavbar a').click(function() {
@@ -594,7 +491,6 @@ http://www.templatemo.com/tm-500-fluid-gallery
 										new Date().getFullYear());
 
 							});
-
 		</script>
 
 	</div>

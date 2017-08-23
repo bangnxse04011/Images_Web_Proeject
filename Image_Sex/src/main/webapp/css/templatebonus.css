@@ -11,7 +11,8 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 .loginModal{
-	width: 300px;
+	width: 40%;
+	 display: inline-block;
 }
 button {
     background-color: #4CAF50;
@@ -35,7 +36,7 @@ button:hover {
 
 .imgcontainer {
     text-align: center;
-    margin: 24px 0 12px 0;
+   
 }
 
 img.avatar {
@@ -49,7 +50,7 @@ img.avatar {
 
 span.psw {
     float: right;
-    padding-top: 16px;
+ 
 }
 
 /* Change styles for span and cancel button on extra small screens */
