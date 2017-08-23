@@ -1,6 +1,7 @@
 package com.images.sex.entity;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import com.images.sex.entity.enums.AccountStatus;
 
@@ -20,12 +21,15 @@ public class User implements Serializable{
 	private 	String 			address;
 	private 	Double 			money;
 	private 	AccountStatus 	status;
+	private		Date			dateCreate;
 	
 	public User() {
 		super();
 	}
 
-	public User(Integer id, String user, String pass, String fName, String lName, String email, String phone, String address, Double money, AccountStatus status) {
+	public User(Integer id, String user, String pass, String fName,
+			String lName, String email, String phone, String address,
+			Double money, AccountStatus status, Date dateCreate) {
 		super();
 		this.id = id;
 		this.user = user;
@@ -37,6 +41,7 @@ public class User implements Serializable{
 		this.address = address;
 		this.money = money;
 		this.status = status;
+		this.dateCreate = dateCreate;
 	}
 
 	public Integer getId() {
@@ -118,4 +123,17 @@ public class User implements Serializable{
 	public void setStatus(AccountStatus status) {
 		this.status = status;
 	}
+
+	public Date getDateCreate() {
+		return dateCreate;
+	}
+
+	public void setDateCreate(Date dateCreate) {
+		this.dateCreate = dateCreate;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 }

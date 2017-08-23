@@ -36,6 +36,11 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.6</version>
 		</dependency>
+		<dependency>
+			<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-drive</artifactId>
+			<version>v3-rev81-1.22.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>Image_Sex</finalName>
