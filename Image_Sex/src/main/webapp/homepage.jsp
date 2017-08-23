@@ -87,7 +87,7 @@ http://www.templatemo.com/tm-500-fluid-gallery
 
 				</nav>
 			</div>
-			<div id="id01" class="modal loginModal" style="margin: 0 auto;">
+			<div id="id01" class="modal loginModal" style="margin: auto; margin-top: 10%;">
 				<span onclick="document.getElementById('id01').style.display='none'"
 					class="close" title="Close Modal">&times;</span>
 				<form action="">
