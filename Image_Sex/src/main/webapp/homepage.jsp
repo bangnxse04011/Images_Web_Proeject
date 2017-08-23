@@ -99,12 +99,12 @@ http://www.templatemo.com/tm-500-fluid-gallery
 						<table>
 							<tr>
 								<td><label><b>Username</b></label></td>
-								<td ><input style="width: 100%;" type="text" placeholder="Enter Username"
+								<td ><input type="text" placeholder="Enter Username"
 									name="uname" required></td>
 							</tr>
 							<tr>
 								<td><label><b>Password</b></label></td>
-								<td ><input type="password" style="width: 100%;"placeholder="Enter Password"
+								<td ><input type="password" "placeholder="Enter Password"
 									name="psw" required></td>
 							</tr>
 						</table>

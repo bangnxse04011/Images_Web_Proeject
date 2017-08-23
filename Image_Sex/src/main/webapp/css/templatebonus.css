@@ -3,7 +3,7 @@ form {
 }
 
 input[type=text], input[type=password] {
-    width: 40%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -12,7 +12,7 @@ input[type=text], input[type=password] {
 }
 .loginModal{
 	width: 40%;
-	 display: inline-block;
+	 
 }
 button {
     background-color: #4CAF50;
