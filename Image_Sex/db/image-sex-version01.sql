@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50699
 File Encoding         : 65001
 
-Date: 2017-08-24 20:30:10
+Date: 2017-08-24 21:17:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,6 +33,7 @@ DEFAULT CHARACTER SET=latin1 COLLATE=latin1_swedish_ci
 -- Records of img_library
 -- ----------------------------
 BEGIN;
+INSERT DELAYED INTO `img_library` (`img_library_id`, `img_library_name`, `img_library_name_uuid`) VALUES ('1', 'http://thethao.vnexpress.net/tin-tuc/sea-games-2017', '11111111111111111'), ('1', 'http://thethao.vnexpress.net/tin-tuc/sea-games-2017', '22222222222222222');
 COMMIT;
 
 -- ----------------------------
@@ -53,6 +54,7 @@ DEFAULT CHARACTER SET=latin1 COLLATE=latin1_swedish_ci
 -- Records of img_thub
 -- ----------------------------
 BEGIN;
+INSERT INTO `img_thub` (`img_thub_id`, `img_thub_name`, `img_thub_name_uuid`) VALUES ('1', 'bangnx', 'tm-img-01.jpg'), ('1', 'banngx1', 'tm-img-02.jpg');
 COMMIT;
 
 -- ----------------------------
@@ -75,7 +77,7 @@ PRIMARY KEY (`img_id`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=latin1 COLLATE=latin1_swedish_ci
-AUTO_INCREMENT=1
+AUTO_INCREMENT=2
 
 ;
 
@@ -83,6 +85,7 @@ AUTO_INCREMENT=1
 -- Records of img_viewer
 -- ----------------------------
 BEGIN;
+INSERT INTO `img_viewer` (`img_id`, `img_name`, `img_link_avata`, `img_description`, `img_status`, `img_name_avata`, `img_name_avata_uuid`, `img_id_thumbnail`, `img_id_library`, `img_date_create`, `img_money`) VALUES ('1', 'xuanbang', 'tm-img-03.jpg', 'hanoidansolon', 'ACTIVE', 'Full HD', '11111111111111111', '1', '1', '2017-08-24', '100000');
 COMMIT;
 
 -- ----------------------------
@@ -118,7 +121,7 @@ COMMIT;
 -- ----------------------------
 -- Auto increment value for img_viewer
 -- ----------------------------
-ALTER TABLE `img_viewer` AUTO_INCREMENT=1;
+ALTER TABLE `img_viewer` AUTO_INCREMENT=2;
 
 -- ----------------------------
 -- Auto increment value for user
