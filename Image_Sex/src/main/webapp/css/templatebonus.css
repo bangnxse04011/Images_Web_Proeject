@@ -1,65 +1,55 @@
-form {
-    border: 3px solid #f1f1f1;
-}
-
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-.loginModal{
-	width: 40%;
-	 
-}
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-.imgcontainer {
-    text-align: center;
+.products {
+   list-style-type: none;
    
 }
-
-img.avatar {
-    width: 20%;
-    border-radius: 50%;
+products p{
+	font-size: 20px;
+}
+.products li {
+margin-left: 50px;
+   display: block;
+   float: left;
+   width: 225px; 
+   text-align: center; 
+}
+.products img{
+	padding: 0.5vw;
+	width: 23vw;
+	height:23vw;
+}
+.contai {
+    position: relative;
 }
 
-.container {
-    padding: 16px;
+.image {
+  opacity: 1;
+  display: block;
+
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
 
-span.psw {
-    float: right;
- 
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
+.contai:hover .image {
+  opacity: 0.3;
+}
+
+.contai:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
 }
