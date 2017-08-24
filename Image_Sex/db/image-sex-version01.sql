@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50699
 File Encoding         : 65001
 
-Date: 2017-08-24 09:12:32
+Date: 2017-08-24 20:30:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -22,8 +22,7 @@ DROP TABLE IF EXISTS `img_library`;
 CREATE TABLE `img_library` (
 `img_library_id`  int(11) NOT NULL ,
 `img_library_name`  varchar(1000) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ,
-`img_library_name_uuid`  varchar(45) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ,
-`img_librarycol`  varchar(45) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL 
+`img_library_name_uuid`  varchar(45) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL 
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=latin1 COLLATE=latin1_swedish_ci
