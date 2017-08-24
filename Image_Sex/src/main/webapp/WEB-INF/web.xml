@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ImageServlet</servlet-name>
+  	<display-name>ImageServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.images.sex.controller.ImageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ImageServlet</servlet-name>
+  	<url-pattern>/ImageServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
