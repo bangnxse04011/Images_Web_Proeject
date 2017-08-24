@@ -1,6 +1,6 @@
 package com.images.sex.entity.custom;
 
-import com.images.sex.entity.ImgVier;
+import com.images.sex.entity.ImgViewer;
 
 public interface ImagesCustom {
 
@@ -9,6 +9,6 @@ public interface ImagesCustom {
 	 * 
 	 * @return : List data images
 	 */
-	public Iterable<ImgVier> findAllImg();
+	public Iterable<ImgViewer> findAllImg();
 
 }

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import com.images.sex.entity.enums.ImgStatus;
 
-public class ImgVier implements Serializable {
+public class ImgViewer implements Serializable {
 
 	/**
 	 * 
@@ -17,20 +17,20 @@ public class ImgVier implements Serializable {
 	private ImgStatus imgStatus;
 	private String nameAvata;
 	private String nameUUID;
-	private ImgThumbnai thumbnai;
+	private ImgThumbnail thumbnai;
 	private ImgLibrary library;
 	private String dateCreate;
 	private Double money;
 	
 	
-	public ImgVier() {
+	public ImgViewer() {
 		super();
 	}
 
 
-	public ImgVier(Integer id, String nameVier, String sourceAvata,
+	public ImgViewer(Integer id, String nameVier, String sourceAvata,
 			String description, ImgStatus imgStatus, String nameAvata,
-			String nameUUID, ImgThumbnai thumbnai, ImgLibrary library,
+			String nameUUID, ImgThumbnail thumbnai, ImgLibrary library,
 			String dateCreate, Double money) {
 		super();
 		this.id = id;
@@ -117,12 +117,12 @@ public class ImgVier implements Serializable {
 	}
 
 
-	public ImgThumbnai getThumbnai() {
+	public ImgThumbnail getThumbnai() {
 		return thumbnai;
 	}
 
 
-	public void setThumbnai(ImgThumbnai thumbnai) {
+	public void setThumbnai(ImgThumbnail thumbnai) {
 		this.thumbnai = thumbnai;
 	}
 

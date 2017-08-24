@@ -2,7 +2,7 @@ package com.images.sex.entity;
 
 import java.io.Serializable;
 
-public class ImgThumbnai implements Serializable{
+public class ImgThumbnail implements Serializable{
 	/**
 	 * 
 	 */
@@ -11,11 +11,11 @@ public class ImgThumbnai implements Serializable{
 	private String name;
 	private String realName;
 	
-	public ImgThumbnai() {
+	public ImgThumbnail() {
 		super();
 	}
 
-	public ImgThumbnai(Integer id, String name, String realName) {
+	public ImgThumbnail(Integer id, String name, String realName) {
 		super();
 		this.id = id;
 		this.name = name;
