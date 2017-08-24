@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50699
 File Encoding         : 65001
 
-Date: 2017-08-24 21:17:32
+Date: 2017-08-24 22:45:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,7 +33,48 @@ DEFAULT CHARACTER SET=latin1 COLLATE=latin1_swedish_ci
 -- Records of img_library
 -- ----------------------------
 BEGIN;
-INSERT DELAYED INTO `img_library` (`img_library_id`, `img_library_name`, `img_library_name_uuid`) VALUES ('1', 'http://thethao.vnexpress.net/tin-tuc/sea-games-2017', '11111111111111111'), ('1', 'http://thethao.vnexpress.net/tin-tuc/sea-games-2017', '22222222222222222');
+INSERT INTO `img_library` VALUES ('1', 'http://thethao.vnexpress.net/tin-tuc/sea-games-2017', '11111111111111111'), ('1', 'http://thethao.vnexpress.net/tin-tuc/sea-games-2017', '22222222222222222');
+COMMIT;
+
+-- ----------------------------
+-- Table structure for img_tag
+-- ----------------------------
+DROP TABLE IF EXISTS `img_tag`;
+CREATE TABLE `img_tag` (
+`img_tag_id`  int(11) NOT NULL ,
+`img_tag_name`  varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ,
+PRIMARY KEY (`img_tag_id`)
+)
+ENGINE=InnoDB
+DEFAULT CHARACTER SET=latin1 COLLATE=latin1_swedish_ci
+
+;
+
+-- ----------------------------
+-- Records of img_tag
+-- ----------------------------
+BEGIN;
+INSERT INTO `img_tag` VALUES ('1', '#HOTGIRL'), ('2', '#HOT'), ('3', '#GIRL');
+COMMIT;
+
+-- ----------------------------
+-- Table structure for img_tag_viewer
+-- ----------------------------
+DROP TABLE IF EXISTS `img_tag_viewer`;
+CREATE TABLE `img_tag_viewer` (
+`img_tag_id`  int(11) NOT NULL ,
+`img_viewer_id`  int(11) NOT NULL 
+)
+ENGINE=InnoDB
+DEFAULT CHARACTER SET=latin1 COLLATE=latin1_swedish_ci
+
+;
+
+-- ----------------------------
+-- Records of img_tag_viewer
+-- ----------------------------
+BEGIN;
+INSERT INTO `img_tag_viewer` VALUES ('1', '1'), ('2', '1');
 COMMIT;
 
 -- ----------------------------
@@ -54,7 +95,7 @@ DEFAULT CHARACTER SET=latin1 COLLATE=latin1_swedish_ci
 -- Records of img_thub
 -- ----------------------------
 BEGIN;
-INSERT INTO `img_thub` (`img_thub_id`, `img_thub_name`, `img_thub_name_uuid`) VALUES ('1', 'bangnx', 'tm-img-01.jpg'), ('1', 'banngx1', 'tm-img-02.jpg');
+INSERT INTO `img_thub` VALUES ('1', 'bangnx', 'tm-img-01.jpg'), ('1', 'banngx1', 'tm-img-02.jpg');
 COMMIT;
 
 -- ----------------------------
@@ -85,7 +126,7 @@ AUTO_INCREMENT=2
 -- Records of img_viewer
 -- ----------------------------
 BEGIN;
-INSERT INTO `img_viewer` (`img_id`, `img_name`, `img_link_avata`, `img_description`, `img_status`, `img_name_avata`, `img_name_avata_uuid`, `img_id_thumbnail`, `img_id_library`, `img_date_create`, `img_money`) VALUES ('1', 'xuanbang', 'tm-img-03.jpg', 'hanoidansolon', 'ACTIVE', 'Full HD', '11111111111111111', '1', '1', '2017-08-24', '100000');
+INSERT INTO `img_viewer` VALUES ('1', 'xuanbang', 'tm-img-03.jpg', 'hanoidansolon', 'ACTIVE', 'Full HD', '11111111111111111', '1', '1', '2017-08-24', '100000');
 COMMIT;
 
 -- ----------------------------

@@ -17,9 +17,6 @@ public class ImgImpl implements ImagesCustom, Serializable {
 	/**
 	 * 
 	 */
-	/**
-	 * 
-	 */
 	private static final long 			serialVersionUID = 1L;
 	private static StringBuilder 		stringBuilder 	= null;
 	private static Connection 			conn 			= null;
