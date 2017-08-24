@@ -11,7 +11,7 @@ public class ImgViewer implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Integer id;
-	private String nameVier;
+	private String nameViewer;
 	private String sourceAvata;
 	private String description;
 	private ImgStatus imgStatus;
@@ -34,7 +34,7 @@ public class ImgViewer implements Serializable {
 			String dateCreate, Double money) {
 		super();
 		this.id = id;
-		this.nameVier = nameVier;
+		this.nameViewer = nameVier;
 		this.sourceAvata = sourceAvata;
 		this.description = description;
 		this.imgStatus = imgStatus;
@@ -57,13 +57,13 @@ public class ImgViewer implements Serializable {
 	}
 
 
-	public String getNameVier() {
-		return nameVier;
+	public String getNameViewer() {
+		return nameViewer;
 	}
 
 
-	public void setNameVier(String nameVier) {
-		this.nameVier = nameVier;
+	public void setNameViewer(String nameVier) {
+		this.nameViewer = nameVier;
 	}
 
 
