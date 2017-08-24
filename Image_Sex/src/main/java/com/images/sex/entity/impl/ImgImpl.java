@@ -35,17 +35,17 @@ public class ImgImpl implements ImagesCustom, Serializable {
 		conn = MysqlDataSource.getInstance().getConnect();
 		stringBuilder = new StringBuilder();
 		stringBuilder.append("SELECT i.* FROM img_viewer i ");
-		stringBuilder.append("INNER JOIN img_thub it ");
-		stringBuilder.append("ON i.img_id = it.img_thub_id ");
-		stringBuilder.append("INNER JOIN img_library il ");
-		stringBuilder.append("ON i.img_id = il.img_library_id ");
+//		stringBuilder.append("INNER JOIN img_thub it ");
+//		stringBuilder.append("ON i.img_id = it.img_thub_id ");
+//		stringBuilder.append("INNER JOIN img_library il ");
+//		stringBuilder.append("ON i.img_id = il.img_library_id ");
 		stringBuilder.append("WHERE i.img_status != 'BLOCKED' ");
 		ps = conn.prepareStatement(stringBuilder.toString());
 		//ps.setString(1, "BLOCKED");
 		System.out.println(stringBuilder.toString());
 		rs = ps.executeQuery();
 		while(rs.next()) {
-			//Integer imgId = rs.getInt(1);
+			Integer imgId = rs.getInt(1);
 			String imgName = rs.getString(2);
 			String imgLink = rs.getString(3);
 			String imgDes = rs.getString(4);
@@ -62,6 +62,7 @@ public class ImgImpl implements ImagesCustom, Serializable {
 //			} else {
 //				status = ImgStatus.BLOCKED;
 //			}
+			imgViewer.setId(imgId);
 			imgViewer.setSourceAvata(imgLink);
 			imgViewer.setDescription(imgDes);
 			imgViewer.setNameViewer(imgName);

@@ -18,6 +18,7 @@
 				<img src="img/tm-img-01.jpg" alt="Avatar" class="image">
 				<div class="middle">
 					<div class="text">John Doe</div>
+					<div class=des>Description helooo annicaw edwad</div>
 				</div>
 			</div>
 		</div>
@@ -63,6 +64,7 @@
 				<img src="img/tm-img-01.jpg" alt="Avatar" class="image">
 				<div class="middle">
 					<div class="text">John Doe</div>
+					
 				</div>
 			</div>
 		</div>
