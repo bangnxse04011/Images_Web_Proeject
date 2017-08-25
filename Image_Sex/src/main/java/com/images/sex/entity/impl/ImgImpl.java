@@ -47,19 +47,6 @@ public class ImgImpl implements ImagesCustom, Serializable {
 			String imgName = rs.getString(2);
 			String avatarLink = rs.getString(3);
 			String imgDes = rs.getString(4);
-			// String st = rs.getString(5);
-			// String name = rs.getString(6);
-			// String nameUUID = rs.getString(7);
-			// Integer imgIdThum = rs.getInt(8);
-			// Integer imgIdLibrary = rs.getInt(9);
-			// Date date = rs.getDate(10);
-			// Double money = rs.getDouble(11);
-
-			// if(st.equals("ACTIVE")) {
-			// status = ImgStatus.ACTIVE;
-			// } else {
-			// status = ImgStatus.BLOCKED;
-			// }
 			imgViewer.setId(imgId);
 			imgViewer.setSourceAvata(avatarLink);
 			imgViewer.setDescription(imgDes);
@@ -165,27 +152,60 @@ public class ImgImpl implements ImagesCustom, Serializable {
 		DbUtils.closeQuietly(conn, ps, rs);
 		return listTags;
 	}
-
-	public static void main(String args[]) {
-		try {
-			ImageViewerDTO dto = new ImgImpl().findOne(1);
-			System.out.println(dto.getAlbumName());
-			System.out.println(dto.getDescription());
-			System.out.println(dto.getLinkAvatar());
-			System.out.println(dto.getLinkDownload());
-			List<String> tags = dto.getTags();
-			for (String string : tags) {
-				System.out.print(string + "\t");
-			}
-			System.out.println("\n");
-			List<String> samples = dto.getSampleImageLinks();
-			for (String string : samples) {
-				System.out.print(string + "\t");
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	public List<ImgViewer> findImageByTag (int tagId) throws SQLException{
+		List<ImgViewer> images = new ArrayList<ImgViewer>();
+		ImgViewer imgViewer = new ImgViewer();
+		listImgs = new ArrayList<ImgViewer>();
+		conn = MysqlDataSource.getInstance().getConnect();
+		stringBuilder = new StringBuilder();
+		stringBuilder.append("SELECT i.* FROM img_viewer i ");
+		stringBuilder.append("INNER JOIN img_tag_viewer itv ");
+		stringBuilder.append("ON i.img_id = itv.img_viewer_id ");
+		stringBuilder.append("INNER JOIN img_tag it ");
+		stringBuilder.append("ON itv.img_tag_id = it.img_tag_id ");
+		stringBuilder.append("WHERE i.img_status != 'BLOCKED' AND it.img_tag_id = ? ");
+		ps = conn.prepareStatement(stringBuilder.toString());
+		System.out.println(stringBuilder.toString());
+		ps.setInt(1, tagId);
+		rs = ps.executeQuery();
+		while (rs.next()) {
+			Integer imgId = rs.getInt(1);
+			String imgName = rs.getString(2);
+			String avatarLink = rs.getString(3);
+			String imgDes = rs.getString(4);
+			imgViewer.setId(imgId);
+			imgViewer.setSourceAvata(avatarLink);
+			imgViewer.setDescription(imgDes);
+			imgViewer.setNameViewer(imgName);
+			images.add(imgViewer);
 		}
+		DbUtils.closeQuietly(conn, ps, rs);
+		return images;
+	}
+	public static void main(String args[]) {
+//		try {
+//			ImageViewerDTO dto = new ImgImpl().findOne(1);
+//			System.out.println(dto.getAlbumName());
+//			System.out.println(dto.getDescription());
+//			System.out.println(dto.getLinkAvatar());
+//			System.out.println(dto.getLinkDownload());
+//			List<String> tags = dto.getTags();
+//			for (String string : tags) {
+//				System.out.print(string + "\t");
+//			}
+//			System.out.println("\n");
+//			List<String> samples = dto.getSampleImageLinks();
+//			for (String string : samples) {
+//				System.out.print(string + "\t");
+//			}
+//			List<ImgViewer> list = new ImgImpl().findImageByTag(1);
+//			for (ImgViewer imgViewer : list) {
+//				System.out.println(imgViewer.getNameViewer());
+//			}
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 
 }
