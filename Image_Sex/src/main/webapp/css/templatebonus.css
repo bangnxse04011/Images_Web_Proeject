@@ -60,3 +60,7 @@ products p {
 	font-size: 15px;
 	padding: 10px;
 }
+.sizebanner{
+	width: 300px;
+	height: 300px;
+}
