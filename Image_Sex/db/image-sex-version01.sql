@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50699
 File Encoding         : 65001
 
-Date: 2017-08-24 22:45:27
+Date: 2017-08-26 13:36:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -118,7 +118,7 @@ PRIMARY KEY (`img_id`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=latin1 COLLATE=latin1_swedish_ci
-AUTO_INCREMENT=2
+AUTO_INCREMENT=6
 
 ;
 
@@ -126,7 +126,7 @@ AUTO_INCREMENT=2
 -- Records of img_viewer
 -- ----------------------------
 BEGIN;
-INSERT INTO `img_viewer` VALUES ('1', 'xuanbang', 'tm-img-03.jpg', 'hanoidansolon', 'ACTIVE', 'Full HD', '11111111111111111', '1', '1', '2017-08-24', '100000');
+INSERT INTO `img_viewer` VALUES ('1', 'xuanbang', 'tm-img-03.jpg', 'hanoidansolon', 'ACTIVE', 'Full HD', '11111111111111111', '1', '1', '2017-08-24', '100000'), ('2', 'xuanbang1', 'tm-img-04.jpg', 'hanoidansolon', 'ACTIVE', 'Full HD', '11111111111111111', '1', '1', '2017-08-24', '100000'), ('3', 'xuanbang2', 'tm-img-05.jpg', 'hanoidansolon', 'ACTIVE', 'Full HD', '11111111111111111', '1', '1', '2017-08-24', '100000'), ('4', 'xuanbang2', 'tm-img-05.jpg', 'hanoidansolon', 'ACTIVE', 'Full HD', '11111111111111111', '1', '1', '2017-08-24', '100000'), ('5', 'xuanbang2', 'tm-img-05.jpg', 'hanoidansolon', 'ACTIVE', 'Full HD', '11111111111111111', '1', '1', '2017-08-24', '100000');
 COMMIT;
 
 -- ----------------------------
@@ -162,7 +162,7 @@ COMMIT;
 -- ----------------------------
 -- Auto increment value for img_viewer
 -- ----------------------------
-ALTER TABLE `img_viewer` AUTO_INCREMENT=2;
+ALTER TABLE `img_viewer` AUTO_INCREMENT=6;
 
 -- ----------------------------
 -- Auto increment value for user
