@@ -20,13 +20,21 @@ public class ImgImpl implements ImagesCustom, Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	private static StringBuilder stringBuilder = null;
-	private static Connection conn = null;
-	private static PreparedStatement ps = null;
-	private static ResultSet rs = null;
-	private static List<ImgViewer> listImgs = null;
+	private static final long 						serialVersionUID 			= 1L;
+	private static 				ImgImpl 			impl 						= null;
+	private static 				StringBuilder		stringBuilder 				= null;
+	private static 				Connection 			conn 						= null;
+	private static 				PreparedStatement 	ps							= null;
+	private static 				ResultSet 			rs 							= null;
+	private static 				List<ImgViewer> 	listImgs 					= null;
 
+	public static ImgImpl getInstance() {
+		if(impl == null) {
+			impl = new ImgImpl();
+		}
+		return impl;
+	}
+	
 	/**
 	 * @throws SQLException
 	 * 
@@ -38,7 +46,7 @@ public class ImgImpl implements ImagesCustom, Serializable {
 		conn = MysqlDataSource.getInstance().getConnect();
 		stringBuilder = new StringBuilder();
 		stringBuilder.append("SELECT * FROM img_viewer i ");
-		stringBuilder.append("WHERE i.img_status != 'BLOCKED' ");
+		stringBuilder.append("	WHERE i.img_status != 'BLOCKED' ");
 		ps = conn.prepareStatement(stringBuilder.toString());
 		System.out.println(stringBuilder.toString());
 		rs = ps.executeQuery();
@@ -58,7 +66,7 @@ public class ImgImpl implements ImagesCustom, Serializable {
 	}
 
 	/**
-	 * cần tạo thêm bảng img_library_viewer
+	 * Method find one by id img_library_viewer
 	 * 
 	 * @param id
 	 * @return
@@ -68,12 +76,12 @@ public class ImgImpl implements ImagesCustom, Serializable {
 		ImageViewerDTO imageViewerDTO = new ImageViewerDTO();
 		conn = MysqlDataSource.getInstance().getConnect();
 		stringBuilder = new StringBuilder();
-		stringBuilder.append("SELECT * FROM img_viewer i ");
-		stringBuilder.append("INNER JOIN img_library_viewer ilv ");
-		stringBuilder.append("ON i.img_id = ilv.img_id ");
-		stringBuilder.append("INNER JOIN img_library il ");
-		stringBuilder.append("ON ilv.img_library_id = il.img_library_id ");
-		stringBuilder.append("WHERE i.img_status != 'BLOCKED' AND i.img_id = ? ");
+		stringBuilder.append("	SELECT * FROM img_viewer i ");
+		stringBuilder.append("	INNER JOIN img_library_viewer ilv ");
+		stringBuilder.append("		ON i.img_id = ilv.img_id ");
+		stringBuilder.append("	INNER JOIN img_library il ");
+		stringBuilder.append("		ON ilv.img_library_id = il.img_library_id ");
+		stringBuilder.append("	WHERE i.img_status != 'BLOCKED' AND i.img_id = ? ");
 		ps = conn.prepareStatement(stringBuilder.toString());
 		ps.setInt(1, id);
 		System.out.println(stringBuilder.toString());
@@ -98,7 +106,7 @@ public class ImgImpl implements ImagesCustom, Serializable {
 	}
 
 	/**
-	 * cần tạo thêm bảng img_thub_viewer
+	 * Method find album by id img_thub_viewer
 	 * 
 	 * @param id
 	 * @return
@@ -108,12 +116,12 @@ public class ImgImpl implements ImagesCustom, Serializable {
 		List<String> listSampleLinks = new ArrayList<String>();
 		conn = MysqlDataSource.getInstance().getConnect();
 		stringBuilder = new StringBuilder();
-		stringBuilder.append("SELECT * FROM img_viewer i ");
-		stringBuilder.append("INNER JOIN img_thub_viewer itv ");
-		stringBuilder.append("ON i.img_id = itv.img_id ");
-		stringBuilder.append("INNER JOIN img_thub it ");
-		stringBuilder.append("ON itv.img_thub_id = it.img_thub_id ");
-		stringBuilder.append("WHERE i.img_status != 'BLOCKED' AND i.img_id = ?");
+		stringBuilder.append("	SELECT * FROM img_viewer i ");
+		stringBuilder.append("	INNER JOIN img_thub_viewer itv ");
+		stringBuilder.append("		ON i.img_id = itv.img_id ");
+		stringBuilder.append("	INNER JOIN img_thub it ");
+		stringBuilder.append("		ON itv.img_thub_id = it.img_thub_id ");
+		stringBuilder.append("	WHERE i.img_status != 'BLOCKED' AND i.img_id = ?");
 		ps = conn.prepareStatement(stringBuilder.toString());
 		ps.setInt(1, id);
 		rs = ps.executeQuery();
@@ -126,7 +134,7 @@ public class ImgImpl implements ImagesCustom, Serializable {
 	}
 
 	/**
-	 * cần tạo thêm bảng img_tag_viewer
+	 * Method find tag by id img_tag_viewer
 	 * 
 	 * @param id
 	 * @return
@@ -136,12 +144,12 @@ public class ImgImpl implements ImagesCustom, Serializable {
 		List<String> listTags = new ArrayList<String>();
 		conn = MysqlDataSource.getInstance().getConnect();
 		stringBuilder = new StringBuilder();
-		stringBuilder.append("SELECT * FROM img_viewer i ");
-		stringBuilder.append("INNER JOIN img_tag_viewer itv ");
-		stringBuilder.append("ON i.img_id = itv.img_viewer_id ");
-		stringBuilder.append("INNER JOIN img_tag it ");
-		stringBuilder.append("ON itv.img_tag_id = it.img_tag_id ");
-		stringBuilder.append("WHERE i.img_status != 'BLOCKED' AND i.img_id = ? ");
+		stringBuilder.append("	SELECT * FROM img_viewer i ");
+		stringBuilder.append("	INNER JOIN img_tag_viewer itv ");
+		stringBuilder.append("		ON i.img_id = itv.img_viewer_id ");
+		stringBuilder.append("	INNER JOIN img_tag it ");
+		stringBuilder.append("		ON itv.img_tag_id = it.img_tag_id ");
+		stringBuilder.append("	WHERE i.img_status != 'BLOCKED' AND i.img_id = ? ");
 		ps = conn.prepareStatement(stringBuilder.toString());
 		ps.setInt(1, id);
 		rs = ps.executeQuery();
@@ -152,18 +160,27 @@ public class ImgImpl implements ImagesCustom, Serializable {
 		DbUtils.closeQuietly(conn, ps, rs);
 		return listTags;
 	}
+	
+
+	/**
+	 * Method find image by tag
+	 * 
+	 * @param tagId
+	 * @return
+	 * @throws SQLException
+	 */
 	public List<ImgViewer> findImageByTag (int tagId) throws SQLException{
 		List<ImgViewer> images = new ArrayList<ImgViewer>();
 		ImgViewer imgViewer = new ImgViewer();
 		listImgs = new ArrayList<ImgViewer>();
 		conn = MysqlDataSource.getInstance().getConnect();
 		stringBuilder = new StringBuilder();
-		stringBuilder.append("SELECT i.* FROM img_viewer i ");
-		stringBuilder.append("INNER JOIN img_tag_viewer itv ");
-		stringBuilder.append("ON i.img_id = itv.img_viewer_id ");
-		stringBuilder.append("INNER JOIN img_tag it ");
-		stringBuilder.append("ON itv.img_tag_id = it.img_tag_id ");
-		stringBuilder.append("WHERE i.img_status != 'BLOCKED' AND it.img_tag_id = ? ");
+		stringBuilder.append("	SELECT i.* FROM img_viewer i ");
+		stringBuilder.append("	INNER JOIN img_tag_viewer itv ");
+		stringBuilder.append("		ON i.img_id = itv.img_viewer_id ");
+		stringBuilder.append("	INNER JOIN img_tag it ");
+		stringBuilder.append("		ON itv.img_tag_id = it.img_tag_id ");
+		stringBuilder.append("	WHERE i.img_status != 'BLOCKED' AND it.img_tag_id = ? ");
 		ps = conn.prepareStatement(stringBuilder.toString());
 		System.out.println(stringBuilder.toString());
 		ps.setInt(1, tagId);
@@ -181,33 +198,6 @@ public class ImgImpl implements ImagesCustom, Serializable {
 		}
 		DbUtils.closeQuietly(conn, ps, rs);
 		return images;
-	}
-	public static void main(String args[]) throws SQLException {
-//		try {
-//			ImageViewerDTO dto = new ImgImpl().findOne(1);
-//			System.out.println(dto.getAlbumName());
-//			System.out.println(dto.getDescription());
-//			System.out.println(dto.getLinkAvatar());
-//			System.out.println(dto.getLinkDownload());
-//			List<String> tags = dto.getTags();
-//			for (String string : tags) {
-//				System.out.print(string + "\t");
-//			}
-//			System.out.println("\n");
-//			List<String> samples = dto.getSampleImageLinks();
-//			for (String string : samples) {
-//				System.out.print(string + "\t");
-//			}
-//			List<ImgViewer> list = new ImgImpl().findImageByTag(1);
-//			for (ImgViewer imgViewer : list) {
-//				System.out.println(imgViewer.getNameViewer());
-//			}
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
-		System.out.println(new ImgImpl().findAllImg());
 	}
 
 }
