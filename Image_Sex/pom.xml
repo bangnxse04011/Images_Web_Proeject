@@ -41,6 +41,11 @@
 			<artifactId>google-api-services-drive</artifactId>
 			<version>v3-rev81-1.22.0</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>Image_Sex</finalName>

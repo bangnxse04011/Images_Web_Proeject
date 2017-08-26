@@ -14,8 +14,7 @@ public class ImageViewerDTO {
 		super();
 	}
 
-	public ImageViewerDTO(String linkAvatar, String albumName, String description, String linkDownload,
-			List<String> sampleImageLinks, List<String> tags) {
+	public ImageViewerDTO(String linkAvatar, String albumName, String description, String linkDownload, List<String> sampleImageLinks, List<String> tags) {
 		super();
 		this.linkAvatar = linkAvatar;
 		this.albumName = albumName;
