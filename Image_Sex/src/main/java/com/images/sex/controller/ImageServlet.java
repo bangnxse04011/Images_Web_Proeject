@@ -22,18 +22,18 @@ public class ImageServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String action = request.getParameter("action");
+//		String action = request.getParameter("action");
 		ImgImpl imgImpl = new ImgImpl();
-		if(action.equalsIgnoreCase("findall")){
+//		if(action.equalsIgnoreCase("findall")){
 			try {
 				List<ImgViewer> imgViewers = (List<ImgViewer>) imgImpl.findAllImg();
 				request.setAttribute("listImage", imgViewers);
-				RequestDispatcher rd = request.getRequestDispatcher("test.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 				rd.forward(request, response);
 			} catch (SQLException e) {
 				LoggerFile.logger(e, ImageServlet.class.getName());
 				e.printStackTrace();
 			}
-		}
+//		}
 	}
 }

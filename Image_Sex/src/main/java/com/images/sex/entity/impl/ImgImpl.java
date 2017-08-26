@@ -182,7 +182,7 @@ public class ImgImpl implements ImagesCustom, Serializable {
 		DbUtils.closeQuietly(conn, ps, rs);
 		return images;
 	}
-	public static void main(String args[]) {
+	public static void main(String args[]) throws SQLException {
 //		try {
 //			ImageViewerDTO dto = new ImgImpl().findOne(1);
 //			System.out.println(dto.getAlbumName());
@@ -206,6 +206,8 @@ public class ImgImpl implements ImagesCustom, Serializable {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
+		
+		System.out.println(new ImgImpl().findAllImg());
 	}
 
 }
