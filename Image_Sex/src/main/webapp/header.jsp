@@ -29,6 +29,12 @@
 					</ul></li>
 				<li><a href="#">Page 2</a></li>
 			</ul>
+			<form class="navbar-form navbar-left">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
 						Sign Up</a></li>
