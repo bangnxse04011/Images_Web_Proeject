@@ -11,8 +11,8 @@
 <div style="background-color: #FAEBD7; margin-left: 15%; margin-right: 15%;">
 <div style ="background-color: #00ffff">
 <div > <img style="width: 20vw; height: 20vw;" src ="img/tm-img-06.jpg"></img></div>
-<div style="margin-top: -20vw;margin-left: 0px ;float :right;">
-<div style="width: 300px;height:20vw; border-radius: 25px; border: 2px solid #000000 ;">aaaaaaaaa</div>
+<div style="margin-top: -20vw; ;float :right;">
+<div style="width: 100%;height:20vw; border-radius: 25px; border: 2px solid #000000 ;">aaaaaaaaa</div>
 </div>
 <div style="clear: both;"></div>
 </div>
