@@ -13,12 +13,18 @@
 </head>
 <body>
 <jsp:include page="header.jsp" />
-<div style="background-color: lavenderblush;; margin-left: 15%; margin-right: 15%;">
+<div style="background-color: lavenderblush;margin-left: 15%; margin-right: 15%;">
 
 <div class="row">
-    <div class="col-sm-4" style="background-color:lavenderblush;"><img class="img-thumbnail" style="width: 20vw;height: 20vw" src ="img/tm-img-10.jpg"></img></div>
-    <div class="col-sm-6" style="background-color:lavenderblush;"> </div>
+    <div class="col-sm-4" style="background-color:lavenderblush;"><img class="img-circle" style="margin-left:-1vw; width: 20vw;height: 20vw" src ="img/tm-img-10.jpg"></img></div>
+    <div class="col-sm-6" style="background-color:lavenderblush;">
+    <p style="font-size: 2vw"><Strong>Name: DemoNameaaaaaaaaaaaaaa</Strong></p>
+    <p>DSADASDASD</p>
+    <p>DSADASDASD</p>
+    <p>DSADASDASD</p>
+         </div>
   </div>
+  <div></div>
 </div>
 </body>
 </html>

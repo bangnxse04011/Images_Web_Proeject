@@ -45,38 +45,39 @@
 	</nav>
 	<div class="container">
 
-		<div class="modal fade" id="myModal" role="dialog">
-			<div class="modal-dialog">
-
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Login</h4>
-					</div>
-					<div class="modal-body" >
-					<center>
-						<form>
-							<table border="0">
-								<tr>
-									<td>Username</td>
-									<td><input type="text" name="FirstName" ></td>
-								</tr>
-								<tr>
-									<td>Password</td>
-									<td><input type="password" name="FirstName" ></td>
-								</tr>
-							</table>
-						</form>
-						</center>
-					</div>
-					<div class="modal-footer">
-						<input type="submit" value="Submit">
-					</div>
-				</div>
-
-			</div>
-		</div>
+		 <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+       <form>
+  <div class="form-group">
+    <label for="email">User:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+  <button type="button" class="btn btn-link">Forgot Password</button> 
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+     
+    </div>
+  </div>
 
 	</div>
 </body>
