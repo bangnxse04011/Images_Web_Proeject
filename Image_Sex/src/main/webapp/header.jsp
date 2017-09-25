@@ -36,7 +36,7 @@
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
+				<li><a href="#" data-toggle="modal" data-target="#myModalSignUp"><span class="glyphicon glyphicon-user"></span>
 						Sign Up</a></li>
 				<li><a href="#" data-toggle="modal" data-target="#myModal"><span
 						class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -78,7 +78,52 @@
      
     </div>
   </div>
-
+		 <div class="modal fade" id="myModalSignUp" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content Sign Up-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign Up</h4>
+        </div>
+        <div class="modal-body">
+       <form>
+  <div class="form-group">
+    <label for="email">User:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+ <div class="form-group">
+    <label for="pwd">Re-enter Password:</label>
+    <input type="password" class="form-control" >
+  </div>
+ <div class="form-group">
+    <label for="fName">First Name:</label>
+    <input type="text" class="form-control" >
+  </div>
+  <div class="form-group">
+    <label for="lName">Last Name:</label>
+    <input type="text" class="form-control" >
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone:</label>
+    <input type="number" class="form-control" >
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+  
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+     
+    </div>
+  </div>
 	</div>
 </body>
 </html>
